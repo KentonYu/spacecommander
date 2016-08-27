@@ -1,8 +1,5 @@
 ---
 # Custom options in the special build of clang-format (these are not standard options)
-# IndentNestedBlocks: false
-ObjCBlockIndentWidth: 4
-# AllowNewlineBeforeBlockParameter: false
 
 Language:        Cpp
 # BasedOnStyle:  Google
@@ -16,13 +13,13 @@ AlignEscapedNewlinesLeft: true
 AlignOperands: false
 AlignTrailingComments: true
 
+# 在超过规定列数之后，在方法声明中将所有参数换行显示（包括在方法声明和实现中，不包括C函数方法）；
 AllowAllParametersOfDeclarationOnNextLine: false
 AllowShortBlocksOnASingleLine: false
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: true
-AllowShortIfStatementsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
-AllowShortLoopsOnASingleLine: true
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
 
 AlwaysBreakAfterDefinitionReturnType: false
 AlwaysBreakTemplateDeclarations: false
@@ -54,12 +51,14 @@ PenaltyBreakFirstLessLess: 120
 PenaltyExcessCharacter: 1000000
 PenaltyReturnTypeOnItsOwnLine: 200
 PointerAlignment: Right
-SpacesBeforeTrailingComments: 1
+SpacesBeforeTrailingComments: 2
 Cpp11BracedListStyle: true
 Standard:        Auto
 IndentWidth:     4
 TabWidth:        8
 UseTab:          Never
+
+# 花括号换行
 BreakBeforeBraces: Custom
 BraceWrapping: 
     AfterClass: true
@@ -87,6 +86,8 @@ ContinuationIndentWidth: 4
 CommentPragmas:  '^ IWYU pragma:'
 ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
 SpaceBeforeParens: ControlStatements
-DisableFormat:   false
+
+# 当前配置生效开关
+DisableFormat:   true
 ...
 
